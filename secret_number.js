@@ -1,10 +1,12 @@
 'use strict';
 module.exports = function() {
 
-  var secretNumber = function(){
+  const secretNumber = (function(){
     let rand = Math.random();
-    return rand;
-  };
+    return function(){
+      return rand;
+    };
+  })();
 
   return secretNumber;
 };
